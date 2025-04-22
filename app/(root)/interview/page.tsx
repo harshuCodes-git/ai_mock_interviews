@@ -9,9 +9,12 @@ const Page = async () => {
       <h3>Interview generation</h3>
 
       <Agent
-        userName={user?.name!}
+        userName={user?.name || "Guest"}
         userId={user?.id}
-        profileImage={user?.profileURL}
+        profileImage={
+          user?.profileURL ??
+          "https://templates.joomla-monster.com/joomla30/jm-news-portal/components/com_djclassifieds/assets/images/default_profile.png"
+        }
         type="generate"
       />
     </>
